@@ -1,0 +1,86 @@
+[System]
+Name='ActuallyRadicalized9'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=33
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='ObsceneWordsAnalyzer'
+Range=[0 1]
+NumMFs=3
+MF1='Low':'trapmf',[0 0 0 0]
+MF2='Medium':'trapmf',[0.00529 0.0729386892177589 0.185 0.251]
+MF3='Lot':'trapmf',[0.165961945031712 0.407 1.05 1.45]
+
+[Input2]
+Name='ToneAnalyzer'
+Range=[0 100]
+NumMFs=3
+MF1='Low':'trapmf',[0 0 22.7272727272727 31]
+MF2='Normal':'trapmf',[26.3 40.91 50 65]
+MF3='High':'trapmf',[55 80 105 145]
+
+[Input3]
+Name='SentimentAnalyzer'
+Range=[-1 1]
+NumMFs=3
+MF1='negative':'trapmf',[-1 -1 -0.65 -0.160676532769556]
+MF2='neutral':'trapmf',[-0.58 -0.2 0.2 0.58]
+MF3='postive':'trapmf',[0.5 0.65 1 1]
+
+[Input4]
+Name='RadicalizedWordAnalyzer'
+Range=[0 1]
+NumMFs=2
+MF1='Quit':'trapmf',[0 0 0.001 0.04]
+MF2='Lot':'trapmf',[0.02 0.4 1 1]
+
+[Output1]
+Name='Radicalized'
+Range=[0 10]
+NumMFs=3
+MF1='Low':'trapmf',[0 0 2.606 4.5]
+MF2='Quite':'trapmf',[3.85 4.8 4.8 6.3]
+MF3='Very':'trapmf',[5.75396825396825 7.42 10.5 14.5]
+
+[Rules]
+1 1 1 1, 2 (1) : 1
+1 1 3 1, 1 (1) : 1
+1 2 3 1, 1 (1) : 1
+1 3 3 1, 1 (1) : 1
+1 3 1 1, 2 (1) : 1
+1 3 2 1, 2 (1) : 1
+1 3 2 2, 3 (1) : 1
+2 2 1 1, 2 (1) : 1
+2 2 2 1, 2 (1) : 1
+2 2 3 1, 2 (1) : 1
+2 3 1 2, 3 (1) : 1
+2 3 1 2, 3 (1) : 1
+2 3 1 1, 3 (1) : 1
+2 2 1 2, 3 (1) : 1
+2 1 1 2, 3 (1) : 1
+3 1 1 2, 3 (1) : 1
+3 1 1 1, 3 (1) : 1
+3 1 2 2, 3 (1) : 1
+3 2 1 2, 3 (1) : 1
+3 3 1 2, 3 (1) : 1
+3 3 3 2, 3 (1) : 1
+3 3 1 1, 3 (1) : 1
+1 3 1 2, 3 (1) : 1
+1 3 3 2, 2 (1) : 1
+1 2 2 1, 1 (1) : 1
+1 1 1 2, 3 (1) : 1
+1 2 1 2, 2 (1) : 1
+1 2 2 2, 2 (1) : 1
+1 1 2 1, 1 (1) : 1
+1 2 1 2, 3 (1) : 1
+1 1 2 2, 2 (1) : 1
+1 3 3 1, 2 (1) : 1
+1 2 3 2, 2 (1) : 1
