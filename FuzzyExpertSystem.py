@@ -75,7 +75,7 @@ def NumBadWords(text_tokens, word_list):
 #-----Calling MATLAB Fuzzy Logic-----
 def MATLABfuzzy(ObsceneWordsAnalyzer, ToneAnalyzer, SentimentAnalyzer, RadicalizedWordFreq):
     eng = matlab.engine.start_matlab()
-    RadicalizedFuzzy = eng.readfis('ActuallyRadicalized9.fis')
+    RadicalizedFuzzy = eng.readfis('FES9.fis')
     CrispInputs = matlab.double([ObsceneWordsAnalyzer, ToneAnalyzer, SentimentAnalyzer, RadicalizedWordFreq])
     CrispOutput = eng.evalfis(RadicalizedFuzzy, CrispInputs)
     return CrispOutput
