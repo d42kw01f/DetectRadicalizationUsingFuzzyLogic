@@ -228,11 +228,11 @@ def main():
 
     #IBM Watson Keys for Tone Analyzer and Natural Language Processing
     #Tone Analyzer
-    apikey = 'vIY8mE-yBzdqWDKDvLYadDWU_rcGOEqjmzHzkowl4B7m'
-    url = 'https://api.au-syd.tone-analyzer.watson.cloud.ibm.com/instances/7b72e4aa-c0dd-4609-b983-b8f8fe8e4e16'
+    apikey = '--'
+    url = '--'
     #Natural Language Processing
-    nlp_apikey = 'GvK3oZzMAy07NlXEBTWs7NwUfw3szIHVRbEInu--2dpo'
-    nlp_url = 'https://api.au-syd.natural-language-understanding.watson.cloud.ibm.com/instances/0d833fb1-000d-4176-90fe-090316de52af'
+    nlp_apikey = '--'
+    nlp_url = '--'
 
     authenticator = IAMAuthenticator(apikey)
     global ta
